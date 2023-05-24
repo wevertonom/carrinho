@@ -6,12 +6,24 @@
     </v-app-bar-title>
     <template #append >
       <v-badge :content="5" class="pr-3">
-        <v-icon icon="mdi-cart" size="x-large"></v-icon>
+        <v-icon icon="mdi-cart" size="x-large" @click.stop="drawer = !drawer"></v-icon>
       </v-badge>
     </template>
   </v-app-bar>
+  <v-navigation-drawer v-model="drawer" temporary location="right" >
+    <v-card>
+
+    </v-card>
+  </v-navigation-drawer>
+  
 </template>
 
-<script setup>
-  //
+<script>
+  export default {
+    data () {
+      return {
+        drawer: null,
+      }
+    },
+  }
 </script>
